@@ -2,9 +2,13 @@
 
 A procedural, animated jellyfish built in Houdini 22 (Apprentice). All generated with nodes and VEX. The animation is driven by keyframes on a single bell controller, and the other parts either follow the bell through Point Deform or are simulated with Vellum.
 
+<img width="640" alt="Karma render" src="assets/readme/render_0066.png">
+
+*Karma render, frame 66*
+
 <img width="640" alt="Jellyfish animation" src="assets/readme/jellyfish.gif">
 
-[demo mp4](assets/readme/jellyfish.mp4)
+*Viewport animation ([mp4](assets/readme/jellyfish.mp4))*
 
 ## Overview
 
@@ -68,6 +72,20 @@ There is no tentacle tutorial for this part, so it adapts a hair simulation tuto
 2. The roots are point-deformed to the animated bell. In the hair setup they are pinned with Match Animation, so the tentacles hang from the moving rim instead of from a static head.
 3. Gravity, damping and drag are tuned for an underwater feel, so the tentacles trail behind the pulse.
 4. The cached simulation is swept into thin tubes that taper toward the tips.
+
+## Extra Credit: Karma Render
+
+<img width="400" alt="Karma render, frame 50" src="assets/readme/render_0050.png"> <img width="400" alt="Karma render, frame 66" src="assets/readme/render_0066.png">
+
+Two still frames (50 and 66) at different points in the pulse, rendered with Karma. The jellyfish is brought into Solaris with a SOP Import.
+
+1. **Materials** - Each part has its own MaterialX Standard Surface in one material library:
+   - **Bell**: mostly transmissive (0.9) with a blue tint, a light clear coat and a faint blue emission, so it reads as a glassy, glowing shell.
+   - **Arms and organs**: use subsurface scattering in pink and coral for a soft, fleshy look.
+   - **Veins**: near-white with a stronger emission (0.3), so they glow through the bell.
+   - **Tentacles**: half transmissive with a slight emission, so they stay thin and delicate.
+2. **Scene** - A large background sphere with a dark navy, slightly emissive material creates a deep-water backdrop. A few dark rocks sit at the bottom of the frame for scale.
+3. **Lighting** - A dome light provides soft ambient fill, plus two additional lights for highlights.
 
 ## Notes
 - The scene file is `jellyfish.hipnc`.
