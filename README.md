@@ -4,11 +4,11 @@ A procedural, animated jellyfish built in Houdini 22 (Apprentice). All generated
 
 <img width="640" alt="Karma render" src="assets/readme/render_0066.png">
 
-*Karma render, frame 66*
+*Karma render, frame 66. Full animation: [Karma render video (slowed down)](assets/readme/jellyfish_karma_slow.mp4)*
 
-<img width="640" alt="Jellyfish animation" src="assets/readme/jellyfish.gif">
+<img width="640" alt="Jellyfish viewport animation" src="assets/readme/jellyfish_viewport.gif">
 
-*Viewport animation ([mp4](assets/readme/jellyfish.mp4))*
+*Viewport flipbook (real-time preview from the Houdini viewport, no materials or lighting): [viewport video](assets/readme/jellyfish_viewport.mp4)*
 
 ## Overview
 
@@ -77,7 +77,11 @@ There is no tentacle tutorial for this part, so it adapts a hair simulation tuto
 
 <img width="400" alt="Karma render, frame 50" src="assets/readme/render_0050.png"> <img width="400" alt="Karma render, frame 66" src="assets/readme/render_0066.png">
 
-Two still frames (50 and 66) at different points in the pulse, rendered with Karma. The jellyfish is brought into Solaris with a SOP Import.
+*Frames 50 and 66 at different points in the pulse*
+
+The full 100-frame animation is also rendered with Karma: [slowed-down mp4](assets/readme/jellyfish_karma_slow.mp4).
+
+The jellyfish is brought into Solaris with a SOP Import.
 
 1. **Materials** - Each part has its own MaterialX Standard Surface in one material library:
    - **Bell**: mostly transmissive (0.9) with a blue tint, a light clear coat and a faint blue emission, so it reads as a glassy, glowing shell.
